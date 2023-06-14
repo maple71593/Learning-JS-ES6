@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Promise是ES6 引入解決異步編程的新解決方案。
+    // 語法上Promise是一個構造函數，用來封裝異步操作並可以獲取其成功或失敗的結果
+    // 1. Promise 構造函數:Promise(excutor){}
+    // 2. Promise.prototype.then方法
+    // 3. promise.prototype.catch方法
+        
+    // 實體化Promise 對象
+    const p = new Promise(function(resolve,reject){
+        setTimeout(function(){
+            // 成功的數據
+            // let data = '數據庫中的用戶數值'
+            // resolve(data);
+
+            let err='數據讀取失敗';
+            reject(err);
+        },1000);
+    });
+    
+    p.then(function(value){
+        console.log(value);
+    },function(reason){
+        console.error(reason);        
+    })
+    
+    </script>
+</body>
+</html>
