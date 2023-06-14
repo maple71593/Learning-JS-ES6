@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// 數組解構賦值
+// 錯誤範例：
+// let abc = [a, b, c];
+// let [aa, bb, cc] = abc;
+// console.log(aa);
+
+// 正確範例：
+let abc = ['a', 'b', 'c'];
+let [aa, bb, cc] = abc;
+console.log(aa);
+
+
+// 對象解構賦值
+// 正確範例：
+let result = {
+    name: 123,
+    type: "es630",
+    age: () => {
+        console.log('我出來啦');
+    }
+};
+let { name, type } = result;
+console.log(name);
+result.age();
+
+
+// 模板字符串
+// 反引號 ``
+// 正確範例：
+let a2 = `
+別吵我
+我在學習
+我在圖書館
+`;
+let a1 = '我';
+let out = `${a1}愛你`;
+console.log(a2);
+console.log(out);
+
+
+// 箭頭函數
+// 1. this 是靜態的，指向箭頭函數所在作用域下的this值
+// 正確範例：
+function getName() {
+    console.log(this.name);
+}
+let getName2 = () => {
+    console.log(this.name);
+}
+
+// 設置window對象的name屬性
+window.name = '嗨你好';
+const school = {
+    name: 'shlaib'
+};
+// 直接呼叫結果
+getName();
+getName2();
+// 使用call方法呼叫
+getName.call(school);
+getName2.call(school);
+
+
+// 2. 不能夠用於實例化對象
+// 錯誤範例：
+// let Person = (name, age) => {
+//     this.name = name;
+//     this.age = age;
+// };
+// let me = new Person('shlaib', 30);
+// console.log(me);
+
+// 正確範例：
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+let me = new Person('shlaib', 30);
+console.log(me);
+
+// 3. 不能使用arguments變數
+// 錯誤範例：
+// let fn = () => {
+//     console.log(arguments);
+// }
+// fn(1, 2, 3);
+
+// 正確範例：
+let fn = (...args) => {
+    console.log(args);
+}
+fn(1, 2, 3);
+
+// 4. 箭頭函數簡寫
+//   (1) 當只有一個參數時，可以省略小括號
+//   (2) 當只有返回值時，可以省略大括號
+// let add = n => n + n;
+
+
+
+
+    </script>
+</body>
+</html>

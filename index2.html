@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 給函數得參數 賦值 初始值
+        // 1.下方的add(a,b,c=10)中的 C=10 就是賦予初始值
+        // 只要要求條件未被滿足，就會以初始值為替補
+        function add(a,b,c=10){
+            return a+b+c;
+        };
+        let result = add(1,2);
+        console.log(result);
+
+        // 2.與解構賦值結合
+        function connect({host='http://127.0.0.1:8000/server',username,password,port}){
+            console.log(host);
+            console.log(username);
+            console.log(password);
+            console.log(port);
+        }
+        connect({
+            username:'book',
+            password:'a++123456',
+            port:4001
+        })
+    </script>
+</body>
+</html>
