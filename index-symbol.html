@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Symbol特點
+        // 1.Symbol的值是唯一的，用來解決命名衝突問題 是用來給對象 添加屬性及方法
+        // 2.Symbol值不能做運算
+        // 3.Symbol定義的對象屬性不能使用for...in來遍歷，但是可以使用Reflect.ownkeys來獲取對象的所有鍵名
+        
+        // 創建Symbol
+        let s = Symbol();
+        // 查看結果 並使用typeof 來確認屬性
+        console.log(s, typeof s);
+
+
+
+
+        // 建立不同變數的Sybol
+        let s2 =Symbol('嗨');
+        let s3 =Symbol('嗨');
+        // 變數的比較結果 兩個數值相同 但卻顯示不同 凸顯出唯一性 
+        console.log(s2 === s3, typeof s2,s3);
+
+
+
+
+
+        //Symbol.for 創建 (此建立與上方不同 上方為函數 使用for的下方為對象)
+        let s4 =Symbol.for('嗨');
+        let s5= Symbol.for('嗨');
+        // 變數結果的比較結果 兩個數值相同 並使用typeof 來確認屬性
+        console.log(s4 === s5, typeof s4,s5);
+
+
+        //Symbol 不可做運算 如下面顯示 會出現錯誤
+         let a1 = s + s3;
+        let a2 = 100 + s1;
+        let a3 = '嗨' + s5;
+
+        console.log(a1);  
+        console.log(a2); 
+        console.log(a3);       
+    </script>
+</body>
+</html>

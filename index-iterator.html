@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 迭代器(簡單來說就是自訂義去遍歷數據)
+        // JavaScript的迭代器（Iterator）是一種用於遍歷資料集合的物件。
+        // 迭代器提供了一種統一的方式來訪問集合中的每個元素，無論集合的具體類型是什麼。
+        // 迭代器物件具有一個 next 方法，該方法返回一個包含 value 和 done 屬性的物件。
+        // value 表示目前迭代位置的值，done 表示迭代是否已完成。
+        // 迭代器的工作原理如下：
+        // 建立迭代器物件：通過調用集合物件上的特殊方法（如 Symbol.iterator），可以獲得一個迭代器物件。
+        // 遍歷迭代器：使用 next 方法逐步遍歷迭代器物件。每次調用 next 方法，都會返回一個表示目前元素的物件。
+        // 檢查迭代完成：通過檢查返回物件的 done 屬性，可以確定迭代是否已完成。如果 done 為 true，表示迭代已經結束，否則繼續進行下一次迭代。
+        
+
+        // 創建一行數組
+        const arr = [1, 2, 3];
+        // 將數組使用Symbol.interator帶入變數iterator
+        const iterator = arr[Symbol.iterator]();
+        //使用 iterator.next() 方法來獲取迭代器的下一個值
+        let result = iterator.next();
+        // 使用 result.done 屬性來檢查迭代是否已經完成
+        while (!result.done) {
+            // 通過 result.value 獲取目前的值並進行處理
+            console.log(result.value);
+            // 使用 iterator.next() 方法繼續獲取迭代器的下一個值
+            // 直到迭代結束（done 為 true）。
+            result = iterator.next();
+        }
+        // 在這個示例中，我們通過調用陣列的 Symbol.iterator 方法獲取迭代器物件，並使用 while 迴圈和 next 方法遍歷迭代器物件，打印出陣列中的每個元素。
+        // 迭代器是 JavaScript 中用於實現可迭代物件的重要機制，它提供了一種通用的方式來遍歷資料集合，包括陣列、字串、Set、Map 等。通過使用迭代器，可以輕鬆地對集合中的元素進行遍歷操作，使程式碼更具可讀性和可維護性。
+        
+        // 以上是chatGPT的範例 筆記參考
+
+        // 以下是尚硅谷的課程
+        const story = ['博明','建志','范婷']
+        // 使用for of 進行遍歷
+        for(let v of story){
+            console.log(v);
+        };
+        let iterator2 = story[Symbol.iterator]();
+        console.log(iterator2.next());
+        console.log(iterator2.next());
+        console.log(iterator2.next());
+        console.log(iterator2.next());
+        console.log(iterator2.next());
+    </script>
+</body>
+
+</html>

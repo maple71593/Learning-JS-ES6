@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //ES6引入Rest參數 用於獲取函數參值，用來替代arguments
+        // ES5 引入實參方式
+        function data(){
+            console.log(arguments);
+        }
+        data('小白','小黑','小黃');
+
+        // rest參數
+        function data(...args){
+             console.log(args);
+        }
+        data('小白','小黑','小黃');
+
+        // rest參數必須放到參數最後
+        function fn(a,b,...args){
+            console.log(a);
+            console.log(b);
+            console.log(args);
+        };
+        fn(1,2,3,4,5,6,7,8,9);
+
+    // 擴展運算符應用
+    // 1.數組合並
+    const shcool = ['賦凱','郁璇','佑誠'];
+    const class1 = ['音樂','資優','體育'];
+    const mix = [...shcool,...class1];
+    console.log(mix);
+
+
+    // 2.複製數組
+    const car = ['BMW','BENZ','TOYOTA'];
+    const CAR = [...car];
+    console.log(CAR);
+
+
+    // 3.將偽數組轉為正數組
+    const divs = document.querySelectorAll('div');
+    const divArr = [...divs];
+    console.log(divArr);
+    </script>
+</body>
+</html>
