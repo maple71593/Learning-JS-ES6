@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 創建Promise對象
+        const p = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve('用戶數據');
+                reject('出錯拉');
+            },3000);
+        });
+        // const result = p.then(value=>{
+        //     console.log(value);
+        //     // 非Promise對象
+        //     // return 'i love yu'
+        //     // Promise對象
+        //     // return new Promise((resolve, reject) => {
+        //     //     // resolve('ok');
+        //     //     reject('讀取失敗');
+        //     // })
+        //     //3.拋出錯誤
+        //     // throw new Error('出錯拉!');
+        //     // throw '出錯拉';
+        // },reason=>{
+        //     console.warn(reason);
+        // });
+        // 鍊式調用 可以解決回調地獄的問題
+        // then方法成功或失敗可以只寫一個
+            // p.then(value=>{
+
+            // }).then(value=>{
+
+            // });
+        
+
+
+        // 小知識:
+        // pconsole.error()：用於輸出錯誤訊息，通常用於指示嚴重的錯誤，可能導致程式終止或出現異常情況。通常會顯示為紅色文字。
+        // console.warn()：用於輸出警告訊息，通常用於指示潛在的問題或建議開發者採取行動。通常會顯示為黃色文字。
+        // throw 是 JavaScript 中的一個關鍵字，用於拋出（throw）一個異常（exception）。當程式執行遇到錯誤或異常情況時，
+        // 可以使用 throw 關鍵字將一個異常物件拋出，這樣就可以中斷程式的正常執行流程，並將控制權轉移到異常處理程序（exception handler）。
+    </script>
+</body>
+</html>

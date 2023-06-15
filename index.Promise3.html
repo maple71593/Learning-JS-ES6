@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pkn = require('packageName');
+        pkn.readFile('123.txt',(err,data1)=>{
+            pkn.readFile('/123.txt',(err,data2)=>{
+                pkn.readFile('/123.txt',(err,data3)=>{
+                     let result = data1 + data2 + data3;
+                        console.log(result);
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

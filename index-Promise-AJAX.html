@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const p = new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET','http://127.0.0.1:8000/data');
+        xhr.send();
+        xhr.onreadystatechange=()=>{
+            if(xhr.readyState ===4){
+                if(xhr.status >=200 ,xhr.status <300){
+                    resolve(xhr.response);
+                }else{
+                    reject(xhr.status);
+                }
+            }
+        };
+    })
+    p.then((value)=>{
+            console.log(value);
+        },(reason)=>{
+            console.error(reason);
+        })
+    </script>
+</body>
+</html>
