@@ -19,12 +19,15 @@
             // 成功的數據
             // let data = '數據庫中的用戶數值'
             // resolve(data);
-
-            let err='數據讀取失敗';
-            reject(err);
+            
+            //失敗的數據
+            // let err='數據讀取失敗';
+            // reject(err);
         },1000);
     });
     
+
+    //調用promise對象的then方法
     p.then(function(value){
         console.log(value);
     },function(reason){
