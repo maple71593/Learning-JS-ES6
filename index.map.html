@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //在 JavaScript 中，Map 是一種內建的集合型別，用於存儲鍵-值對的集合。它類似於物件，但與物件不同的是，Map 的鍵可以是任何類型，包括原始類型、物件或函數。
+        // 而且，Map 中的鍵是唯一的，不會有重複的鍵。
+        // Map 提供了一組方法來操作集合中的鍵-值對，包括新增、刪除、獲取值以及迭代等。以下是一些常用的 Map 方法：
+
+        // set(key, value): 將指定的鍵和值添加到 Map 中。
+        // get(key): 根據指定的鍵獲取對應的值。
+        // has(key): 檢查 Map 中是否存在指定的鍵。
+        // delete(key): 根據指定的鍵刪除對應的鍵-值對。
+        // clear(): 清空 Map 中的所有鍵-值對。
+        // size: 獲取 Map 中鍵-值對的數量。
+        // keys(): 返回一個包含所有鍵的迭代器。
+        // values(): 返回一個包含所有值的迭代器。
+        // entries(): 返回一個包含所有鍵-值對的迭代器。
+        // 使用 Map 可以有效地處理和操作鍵-值對的集合，並提供了更豐富的功能和靈活性，特別適合需要根據鍵查找和操作值的場景。
+
+
+        // 聲明Map
+        let m = new Map();
+
+        // 添加元素(鍵名,值)
+        // 範例1
+        m.set('name','學校');
+        m.set('change',function(){
+            console.log('大家好');
+        });
+        let key ={
+            school : '大村國中'
+        };
+        m.set(key,['1班','2班','3班'])
+        console.log(m);
+
+
+        //size (檢測map 個數)
+        console.log(m.size);
+
+
+        // 刪除
+        //m.delete('name');
+
+        // 獲取
+        console.log(m.get('change'));
+        console.log(m.get(key));
+
+        //遍歷
+        for(let v of m){
+            console.log(v);
+        }
+
+
+    </script>
+</body>
+</html>

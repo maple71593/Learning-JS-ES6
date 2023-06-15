@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 聲明一個set
+        // let s = new Set();
+        // let s2 = new Set(['國文','數學','英文','生物','化學','數學']);
+        // // 元素個數
+        // console.log(s2.size);
+        // //新增元素
+        // s2.add('家政');
+        // //刪除元素
+        // s2.delete('英文');
+        // // 檢測
+        // s2.has('數學')
+        // // 清空
+        // s2.clear();
+        // //使用for of遍歷
+        // for(let v of s2){
+        //     console.log(v);
+        // }
+
+
+
+
+
+
+        let arr = [1,2,3,4,4,3,2,1,6,5,4,11,12,13];
+        let arr2 = [9,8,7,6,5,4,3,2,1]
+        // 1.數組去重複(把數組變成set 再利用擴展運算符(...)它變回數組 即可達成數組去重)
+        // let result = [...new Set(arr)];
+        // console.log(result);
+
+
+        // 2.交集(小知識)
+            let result = [...new Set(arr)].filter(item=>{
+                let s2 = new Set(arr2);
+                if(s2.has(item)){
+                    return true
+                }else{
+                    return false
+                }
+            });
+            console.log(result);
+        //     // 簡化寫法
+            let result1 =[...new Set(arr)].filter(item => new Set(arr2).has(item));
+                console.log(result1);
+        // // 3.並集
+        let a1 = [...new Set([...arr,...arr2])];
+            console.log(a1);
+
+        // // 4.差集
+        let diff =[...new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+            console.log(diff);
+        
+            // // 小知識
+        // // filter() 方法遍歷數組的每個元素，將元素傳遞給回調函數進行判斷。
+        // // 如果回調函數返回 true，則該元素將包含在返回的新數組中，否則將被排除
+    </script>
+</body>
+</html>

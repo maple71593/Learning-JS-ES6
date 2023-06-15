@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 在 JavaScript 中，class 是一種用來定義物件的語法糖。它提供了一種更簡潔和直觀的方式來定義物件的結構和行為。
+        // 使用 class 關鍵字可以定義一個類，類是一個藍圖或模板，描述了物件的屬性和方法。類具有以下特點：
+        //1.建構函式 (Constructor): 類可以定義一個特殊的方法，稱為建構函式。它在創建該類的新實例時被調用，用於初始化對象的狀態。
+
+        //2.屬性 (Properties): 類可以定義屬性，這些屬性描述了物件的狀態和特徵。屬性可以是實例屬性，每個實例都有自己的值；也可以是靜態屬性，屬於類本身而不是實例。
+
+        //3.方法 (Methods): 類可以定義方法，這些方法定義了物件的行為和功能。方法可以是實例方法，操作實例屬性；也可以是靜態方法，操作靜態屬性或執行與類相關的功能。
+
+        //4.繼承 (Inheritance): 類可以通過繼承機制衍生出子類，子類繼承了父類的屬性和方法。子類可以擴展或覆蓋父類的功能，並添加自己的獨特功能。
+
+        // 使用 class 的語法可以更清晰和結構化地定義物件，使程式碼更易於維護和擴展。以下是一個簡單的例子，展示了如何使用 class 定義和使用一個物件：
+
+        //傳統ES5 作法
+        // 函式
+        function Phone (brand,price){
+            this.brand = brand;
+            this.price = price;
+        }
+        // 添加方法
+        Phone.prototype.call = function(){
+            console.log('打電話');
+        }
+        // 實體化
+        let ph = new Phone('蘋果',26900);
+        // 呼叫
+        ph.call();
+        console.log(ph);
+
+
+
+        // 使用class方法
+        class Phone1 {
+            //constructor() 是固定的 不能更改
+            constructor(brand,price){
+                this.brand = brand;
+                this.price = price;
+            };
+            call(){
+                console.log('打電話');
+            };
+        };
+        let apple = new Phone1('14 pro Max',46990) ;
+        console.log(apple);
+    </script>
+</body>
+</html>
